@@ -22,7 +22,14 @@ pip install uv
    cd vitto-credit-risk-assessment
    ```
 
-2. **Initialize Environment & Install Dependencies:**
+2. **Download & Place the Dataset:**
+   To ensure data privacy and follow version control best practices, the raw dataset is not included in this repository.
+   * Download the CSV file from the [UCI Repository](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients).
+   * Create a folder named `data` at the root of this project.
+   * Place the downloaded file inside the `data` folder and ensure it is named `UCI_Credit_Card.csv`.
+   * *Note: The `data/` folder is intentionally added to `.gitignore` to prevent committing raw data.*
+
+3. **Initialize Environment & Install Dependencies:**
    Run the following command to automatically create a `.venv` virtual environment and sync all dependencies from `pyproject.toml` and `uv.lock`:
    ```bash
    uv sync
