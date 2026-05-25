@@ -66,7 +66,7 @@ Our analytical approach rigorously followed an end-to-end data science lifecycle
    * Split data into 80/20 train-test sets using **stratified sampling**, standardizing features securely on the training set to prevent data leakage.
 4. **Model Training & Evaluation:**
    * Trained a baseline Logistic Regression model against an XGBoost classifier. 
-   * XGBoost was selected as the champion model to handle non-linear risk interactions, validated thoroughly via 5-Fold Cross-Validation (CV AUC-ROC: **0.7572 ± 0.0060**).
+   * XGBoost was selected as the champion model to handle non-linear risk interactions, validated thoroughly via 5-Fold Cross-Validation (CV AUC-ROC: **0.7581 ± 0.0073**).
 5. **Auditing & Explainability (Bonuses):**
    * Conducted SQL-based demographic analysis.
    * Audited the model for algorithmic fairness, noting disparities in False Positive Rates (FPR) across Gender and Education.
@@ -92,7 +92,7 @@ Our core analytical finding is that **behavior trumps demographics.** A customer
 
 * **Primary Signal (`TOTAL_DELAY_MONTHS`):** The cumulative number of months a borrower is late is the single most powerful warning signal, accounting for over **45% of the total predictive weight** in our model. Accumulating three or more late months is a near-certain warning signal of impending default.
 * **Secondary Signal (`PAY_0`):** A borrower's payment status in the most recent month is the next strongest indicator. Customers currently 2+ months in arrears default at a rate of over **69%**.
-* **Model Efficacy:** At our operating threshold, the XGBoost model successfully flags **58% of actual defaults** (Recall) before they happen. It ranks a high-risk borrower above a low-risk borrower roughly 3 out of 4 times (AUC-ROC: 0.752), providing a solid baseline for an automated early-intervention system.
+* **Model Efficacy:** At our operating threshold, the XGBoost model successfully flags **57% of actual defaults** (Recall) before they happen. It ranks a high-risk borrower above a low-risk borrower roughly 3 out of 4 times (AUC-ROC: 0.752), providing a solid baseline for an automated early-intervention system.
 
 ### Recommended Actions for the Credit Team
 1. **Early-Warning Delinquency Trigger:** Implement a proactive outreach rule flagging any cardholder who records **2 or more delayed payment months** in a rolling 6-month window for soft interventions (e.g., SMS alerts).
