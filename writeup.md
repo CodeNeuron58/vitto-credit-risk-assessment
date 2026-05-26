@@ -60,5 +60,7 @@ Given an additional 2–3 working days, I would implement the following enhancem
    Instead of relying purely on `scale_pos_weight`, I would output raw probabilities and perform threshold optimization against a specific financial loss matrix (e.g., "A false positive costs us $500 in lost revenue; a false negative costs us $5,000 in charge-offs") to maximize net portfolio profit.
 3. **Hyperparameter Optimization:**  
    Implement Bayesian optimization (via `Optuna` or `Hyperopt`) to fine-tune XGBoost parameters (e.g., `max_depth`, `learning_rate`, `subsample`). This could reliably squeeze an additional 2-4% of performance out of the AUC-ROC.
-4. **Alternative Data Integration:**  
+4. **Alternative Model Exploration:**  
+   While XGBoost provides a robust champion model, I would evaluate other state-of-the-art tabular models like **LightGBM** (for faster training and potentially better handling of category splits) or **CatBoost** (which natively handles categorical features extremely well without aggressive one-hot encoding). Exploring these could yield marginal gains in predictive power or inference speed.
+5. **Alternative Data Integration:**  
    Integrate macroeconomic indicators (e.g., local inflation rates, regional employment figures) to provide broader economic context to an individual borrower's utilization and repayment behaviors.
